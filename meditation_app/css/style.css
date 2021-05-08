@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 * {
-  margin: 0;
+  margin: 0 0 0 0;
   padding: 0;
   box-sizing: border-box; }
 
@@ -51,25 +51,25 @@ p {
 .heading-primary {
   font-weight: 600;
   display: block;
-  font-size: 8rem; }
+  font-size: 9rem; }
 
 .heading-secondary {
   font-weight: 500;
-  font-size: 6rem; }
+  font-size: 7rem; }
 
 .heading-tertiary {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 400;
   display: block; }
 
 .section-landing {
-  height: auto;
+  min-height: 90vh;
   width: 100%; }
 
 .section-features {
   margin: 0 auto;
   width: 90%;
-  height: 90vh; }
+  height: auto; }
 
 .section-testimonials {
   height: auto; }
@@ -108,18 +108,11 @@ p {
 .landing {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 auto;
-  width: 90%; }
-
-.intro-words {
-  flex: 1; }
-
-.intro-image {
-  flex: 1;
-  justify-content: flex-end; }
-  .intro-image__image {
-    margin: 0 auto;
+  width: 90%;
+  height: 100%; }
+  .landing__intro-image__image {
     width: 52rem; }
 
 .features {
@@ -170,6 +163,22 @@ p {
     font-size: 8rem;
     color: #4E4E4E; }
 
+.plans__plan {
+  width: 34rem;
+  height: 50rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+  .plans__plan__image {
+    flex: 1;
+    width: 70%; }
+  .plans__plan__description {
+    flex: 1; }
+  .plans__plan__price {
+    flex: .5; }
+
 .u-center-text {
   text-align: center; }
 
@@ -202,3 +211,37 @@ p {
 
 .u-text-right {
   text-align: right; }
+
+@media screen and (max-width: 1100px) {
+  .landing {
+    text-align: center;
+    flex-direction: column; }
+    .landing__intro-words {
+      margin-bottom: 7rem; } }
+
+@media screen and (max-width: 1000px) {
+  .features {
+    grid-template-columns: 100%;
+    column-gap: 0;
+    grid-template-rows: 20% 20% 20% 20%;
+    row-gap: 10rem; } }
+
+@media screen and (max-width: 650px) {
+  .landing__intro-image__image {
+    width: 40rem; } }
+
+@media screen and (max-width: 450px) {
+  .landing__intro-image__image {
+    width: 35rem; } }
+
+@media screen and (max-width: 400px) {
+  .landing__intro-image__image {
+    width: 30rem; }
+  html {
+    font-size: 50%; } }
+
+@media screen and (max-width: 350px) {
+  .landing__intro-image__image {
+    width: 25rem; }
+  html {
+    font-size: 45%; } }
