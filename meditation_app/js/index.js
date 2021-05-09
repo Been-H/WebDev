@@ -9,6 +9,10 @@ var destinations = [
     document.querySelector(".section-plans")
 ];
 
+const menuButton = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const hamburgerLines = document.querySelectorAll(".line");
+
 function smoothScroll(target, duration) {
     var targetPosition = target.getBoundingClientRect().top;
     var startPosition = window.pageYOffset;
@@ -37,3 +41,11 @@ for (let i = 0; i < buttons.length; i++) {
         smoothScroll(destinations[i], 1300)
     });
 }
+
+menuButton.addEventListener("click", function() {
+    navLinks.classList.toggle("nav-links-open");
+    menuButton.classList.toggle("hamburger-menu-open");
+    for (let i = 0; i < hamburgerLines.length; i++) {
+        hamburgerLines[i].classList.toggle('line-menu-open');
+    }
+})
