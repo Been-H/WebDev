@@ -134,6 +134,12 @@ p {
       height: 20rem;
       margin-right: 2rem; }
 
+.plans {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  margin: 0 auto; }
+
 .btn {
   transition: all .5s;
   text-decoration: none;
@@ -164,20 +170,27 @@ p {
     color: #4E4E4E; }
 
 .plans__plan {
-  width: 34rem;
+  width: 90%;
   height: 50rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   text-align: center; }
   .plans__plan__image {
-    flex: 1;
-    width: 70%; }
+    flex: 2;
+    width: 80%; }
   .plans__plan__description {
-    flex: 1; }
+    flex: 1;
+    display: flex;
+    align-items: center; }
   .plans__plan__price {
-    flex: .5; }
+    display: flex;
+    align-items: center;
+    flex: 1; }
 
 .u-center-text {
   text-align: center; }
@@ -236,7 +249,11 @@ p {
     grid-template-columns: 100%;
     column-gap: 0;
     grid-template-rows: 20% 20% 20% 20%;
-    row-gap: 10rem; } }
+    row-gap: 10rem; }
+  .plans {
+    width: 70%;
+    grid-template-columns: 100%;
+    row-gap: 5rem; } }
 
 @media screen and (max-width: 650px) {
   .landing__intro-image__image {
