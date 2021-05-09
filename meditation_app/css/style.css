@@ -31,9 +31,8 @@ p {
   font-size: 1.8rem; }
 
 .stand-out {
-  display: inline-block;
-  color: #EB716A;
-  font-weight: 700; }
+  font-size: 2.3rem;
+  font-weight: 400; }
 
 .gradient-text {
   background-image: linear-gradient(to right, #FB9B56, #EB716A);
@@ -55,10 +54,10 @@ p {
 
 .heading-secondary {
   font-weight: 500;
-  font-size: 7rem; }
+  font-size: 6rem; }
 
 .heading-tertiary {
-  font-size: 2.3rem;
+  font-size: 4rem;
   font-weight: 400;
   display: block; }
 
@@ -77,7 +76,12 @@ p {
 .section-plans {
   margin: 0 auto;
   width: 90%;
-  height: 90vh; }
+  height: auto; }
+
+.section-cta {
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh; }
 
 .header {
   height: 15vh;
@@ -180,6 +184,11 @@ p {
   align-items: center;
   margin: 0 auto;
   text-align: center; }
+  .plans__plan__left {
+    margin: 0 0 0 0; }
+  .plans__plan__right {
+    margin-left: auto;
+    margin-right: 0; }
   .plans__plan__image {
     flex: 2;
     width: 80%; }
@@ -244,7 +253,7 @@ p {
     .landing__intro-words {
       margin-bottom: 7rem; } }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   .features {
     grid-template-columns: 100%;
     column-gap: 0;
@@ -253,7 +262,42 @@ p {
   .plans {
     width: 70%;
     grid-template-columns: 100%;
-    row-gap: 5rem; } }
+    row-gap: 7rem; }
+    .plans__plan__left {
+      margin: 0 auto 0 auto; }
+    .plans__plan__right {
+      margin: 0 auto; } }
+
+@media screen and (max-width: 1000px) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: #4E4E4E;
+    margin: 5px; }
+  .line-menu-open {
+    background: white; }
+  .hamburger {
+    right: 10%;
+    position: absolute;
+    cursor: pointer; }
+  .hamburger-menu-open {
+    z-index: 100; }
+  .nav-links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip-path: circle(0px at 90% 10%);
+    -webkit-clip-path: circle(0px at 90% 10%);
+    transition: all 1s ease-out;
+    background: linear-gradient(to bottom left, #EB716A, #FB9B56);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column; }
+    .nav-links__link {
+      color: #fff; }
+  .nav-links-open {
+    clip-path: circle(1200px at 90% 10%);
+    -webkit-clip-path: circle(1200px at 90% 10%); } }
 
 @media screen and (max-width: 650px) {
   .landing__intro-image__image {
