@@ -277,6 +277,7 @@ p {
   .line-menu-open {
     background: white; }
   .hamburger {
+    position: relative;
     cursor: pointer; }
   .hamburger-menu-open {
     z-index: 100; }
@@ -294,8 +295,8 @@ p {
     .nav-links__link {
       color: #fff; }
   .nav-links-open {
-    clip-path: circle(1200px at 90% 10%);
-    -webkit-clip-path: circle(1200px at 90% 10%); } }
+    clip-path: circle(1400px at 90% 10%);
+    -webkit-clip-path: circle(1400px at 90% 10%); } }
 
 @media screen and (max-width: 650px) {
   .landing__intro-image__image {
