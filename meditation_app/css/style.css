@@ -277,8 +277,6 @@ p {
   .line-menu-open {
     background: white; }
   .hamburger {
-    right: 10%;
-    position: absolute;
     cursor: pointer; }
   .hamburger-menu-open {
     z-index: 100; }
