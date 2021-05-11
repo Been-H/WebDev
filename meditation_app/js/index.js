@@ -9,6 +9,8 @@ var destinations = [
     document.querySelector(".section-plans")
 ];
 
+var navBarOpen = false;
+
 const menuButton = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const hamburgerLines = document.querySelectorAll(".line");
@@ -24,14 +26,12 @@ function smoothScroll(target, duration) {
         var timeElapsed = currentTime - startTime;
         var run = ease(timeElapsed, startPosition, distance, duration);
         window.scrollTo(0, run);
-        console.log(run);
         if (timeElapsed < duration) requestAnimationFrame(animation);
     }
 
     function ease(t, b, c, d) {
         return c * Math.sin(t / d * (Math.PI / 2)) + b;
     };
-
 
     requestAnimationFrame(animation);
 }
@@ -40,12 +40,18 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
         smoothScroll(destinations[i], 1300)
     });
+    buttons[i].addEventListener("click", toggleNav);
 }
 
-menuButton.addEventListener("click", function() {
-    navLinks.classList.toggle("nav-links-open");
-    menuButton.classList.toggle("hamburger-menu-open");
-    for (let i = 0; i < hamburgerLines.length; i++) {
-        hamburgerLines[i].classList.toggle('line-menu-open');
+function toggleNav() {
+    if (true) {
+        navLinks.classList.toggle("nav-links-open");
+        menuButton.classList.toggle("hamburger-menu-open");
+        navBarOpen = !navBarOpen;
     }
-})
+
+}
+
+window.addEventListener("scroll", function() { if (navBarOpen) scrollTo(0, 0); });
+
+menuButton.addEventListener("click", toggleNav);
