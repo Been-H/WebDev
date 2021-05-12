@@ -9,7 +9,7 @@ var destinations = [
     document.querySelector(".section-plans")
 ];
 
-var navBarOpen = false;
+var navBarOpenWidth = 1000;
 
 const menuButton = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -44,7 +44,8 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 function toggleNav() {
-    if (true) {
+    console.log(window.innerWidth);
+    if (window.innerWidth <= navBarOpenWidth) {
         navLinks.classList.toggle("nav-links-open");
         menuButton.classList.toggle("hamburger-menu-open");
         navBarOpen = !navBarOpen;
