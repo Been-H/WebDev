@@ -5,11 +5,13 @@
 
 html {
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 body {
     font-family: sans-serif;
     color: white;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -47,16 +49,24 @@ img {
 }
 
 .front-words {
-    padding-top: 20vh;
     padding-bottom: 30vh;
     text-align: center;
     background-color: black;
     height: auto;
 }
 
+.front-words__points {
+    position: absolute;
+    top: 120rem;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .coverImage {
-    width: 45rem;
-    filter: brightness(40%);
+    width: 100rem;
 }
 
 .front-words__front-words {
@@ -66,11 +76,21 @@ img {
 }
 
 .front-words__text {
+    padding-top: 20vh;
     position: absolute;
     top: 30%;
     left: 50%;
     width: 80%;
     transform: translateX(-50%);
+}
+
+.front-words__images {
+    padding-top: 20vh;
+    filter: brightness(60%);
+}
+
+.front-words__images.brighten {
+    filter: brightness(30%);
 }
 
 .animate-in__text {}
