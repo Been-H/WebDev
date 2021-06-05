@@ -43,10 +43,20 @@ setInterval(() => {
 }, 33.3);
 
 //AirPodsAnimaiton
+
+const preloadImages = () => {
+    for (let i = 1; i < frameCount; i++) {
+        const img = new Image();
+        img.src = currentFrame(i);
+    }
+};
+
+
 let scrollpos2 = 0;
 const frameCount = 147;
 var currentFrameIndex = 0;
 const frameIncreaseInterval = Math.round(5000 / frameCount);
+var lastFrameIncrease = 0;
 var nextFrameIncrease = frameIncreaseInterval;
 const currentFrame = index => (
     `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index.toString().padStart(4, '0')}.jpg`
@@ -59,13 +69,22 @@ scene2.on("update", e => {
 
 setInterval(() => {
     if (scrollpos2 <= 5000) {
-        console.log(nextFrameIncrease);
         if (scrollpos2 >= nextFrameIncrease) {
             currentFrameIndex++;
             airPodsImage.src = currentFrame(currentFrameIndex);
-            console.log("yes");
+            lastFrameIncrease = nextFrameIncrease;
             nextFrameIncrease += frameIncreaseInterval;
+        } else if (scrollpos2 < lastFrameIncrease) {
+            currentFrameIndex--;
+            airPodsImage.src = currentFrame(currentFrameIndex);
+            if (lastFrameIncrease != frameIncreaseInterval && nextFrameIncrease != frameIncreaseInterval) {
+                lastFrameIncrease -= frameIncreaseInterval;
+                nextFrameIncrease -= frameIncreaseInterval;
+            }
+
         }
     }
 
 }, 33.3);
+
+preloadImages();
