@@ -261,7 +261,7 @@ p {
   .header__hamburger {
     display: block; }
   .header__nav__clicked {
-    transform: translateX(0); }
+    transform: translateX(-100%); }
   .toggle .line1 {
     transform: rotate(-45deg) translate(-9px, 6px); }
   .toggle .line2 {
